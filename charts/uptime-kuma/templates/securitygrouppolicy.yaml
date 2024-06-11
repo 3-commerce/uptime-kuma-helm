@@ -1,0 +1,18 @@
+{{- if .Values.awsEKS.sgp.enabled -}}
+apiVersion: vpcresources.k8s.aws/v1beta1
+kind: SecurityGroupPolicy
+metadata:
+  name: {{ template "uptime-kuma.name" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "uptime-kuma.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      {{- include "uptime-kuma.selectorLabels" . | nindent 6 }}
+  securityGroups:
+    groupIds:
+      {{- range .Values.awsEKS.sgp.sgIds }}
+      - {{ . | quote }}
+      {{- end }}
+{{- end }}

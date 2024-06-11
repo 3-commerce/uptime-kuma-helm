@@ -46,6 +46,14 @@ securityContext:
   # runAsNonRoot: true
   # runAsUser: 1000
 
+awsEKS:
+  sgp:
+    enabled: false
+    # AWS Security Group IDs to attach to the pod
+    # sgIds:
+    #   - sg-01abcd23456efgh
+    #   - sg-99xyz87abc65def
+
 service:
   type: ClusterIP
   port: 3001
@@ -124,6 +132,15 @@ volume:
   # storageClassName:
   # Reuse your own pre-existing PVC.
   existingClaim: ""
+
+database:
+  type: mariadb
+  # host:
+  # port:
+  # dbname:
+  # existingSecret:
+  # existingSecretUsernameKey:
+  # existingSecretPasswordKey:
 
 # -- A list of additional volumes to be added to the pod
 additionalVolumes:

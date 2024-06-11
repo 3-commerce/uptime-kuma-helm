@@ -53,6 +53,28 @@ spec:
           env:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+            - name: UPTIME_KUMA_DB_TYPE
+              value: {{ .Values.database.type | lower }}
+            - name: UPTIME_KUMA_DB_HOSTNAME
+              value: {{ .Values.database.host | quote }}
+            - name: UPTIME_KUMA_DB_PORT
+              value: {{ .Values.database.port | quote }}
+            - name: UPTIME_KUMA_DB_NAME
+              value: {{ .Values.database.dbname | quote }}
+            {{- if and .Values.database.existingSecret .Values.database.existingSecretUsernameKey }}
+            - name: UPTIME_KUMA_DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.database.existingSecret }}
+                  key: {{ .Values.database.existingSecretUsernameKey }}
+            {{- end }}
+            {{- if and .Values.database.existingSecret .Values.database.existingSecretPasswordKey }}
+            - name: UPTIME_KUMA_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.database.existingSecret }}
+                  key: {{ .Values.database.existingSecretPasswordKey }}
+            {{- end }}
           ports:
             - name: http
               containerPort: 3001
