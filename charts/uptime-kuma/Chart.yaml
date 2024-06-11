@@ -1,0 +1,14 @@
+apiVersion: v2
+appVersion: "2.0.0-dev"
+deprecated: false
+description: A self-hosted Monitoring tool like "Uptime-Robot".
+home: https://github.com/3-commerce/uptime-kuma
+icon: https://raw.githubusercontent.com/louislam/uptime-kuma/master/public/icon.png
+maintainers:
+  - name: 3-commerce
+    email: root@localhost
+name: uptime-kuma
+sources:
+  - https://github.com/louislam/uptime-kuma
+type: application
+version: 2.0.0
