@@ -1,0 +1,21 @@
+apiVersion: v1
+entries:
+  uptime-kuma:
+  - apiVersion: v2
+    appVersion: 2.0.0-dev
+    created: "2024-06-11T13:26:26.30821+07:00"
+    description: A self-hosted Monitoring tool like "Uptime-Robot".
+    digest: 77cb22fe575497a2a7c17bf53dc48d4955a1cec1893f849bb13b164b9630c341
+    home: https://github.com/3-commerce/uptime-kuma
+    icon: https://raw.githubusercontent.com/louislam/uptime-kuma/master/public/icon.png
+    maintainers:
+    - email: 44827800+3-commerce@users.noreply.github.com
+      name: 3-commerce
+    name: uptime-kuma
+    sources:
+    - https://github.com/louislam/uptime-kuma
+    type: application
+    urls:
+    - https://github.com/3-commerce/uptime-kuma-helm/releases/download/v2.0.0-dev/uptime-kuma-2.0.0.tgz
+    version: 2.0.0
+generated: "2024-06-11T13:26:26.307151+07:00"

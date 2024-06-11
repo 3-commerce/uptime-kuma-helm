@@ -6,7 +6,7 @@ home: https://github.com/3-commerce/uptime-kuma
 icon: https://raw.githubusercontent.com/louislam/uptime-kuma/master/public/icon.png
 maintainers:
   - name: 3-commerce
-    email: root@localhost
+    email: 44827800+3-commerce@users.noreply.github.com
 name: uptime-kuma
 sources:
   - https://github.com/louislam/uptime-kuma
